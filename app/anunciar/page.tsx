@@ -7,9 +7,10 @@ import { CheckCircle2, MessageSquare, TrendingUp, ShieldCheck, Users } from "luc
 export default function AnunciarPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <section className="relative min-h-[85vh] lg:min-h-[70vh] flex items-end md:items-center pb-12 md:pt-0 md:pb-0 pt-24 overflow-hidden bg-navy-primary">
-        {/* Background image – visible on all screens */}
-        <div className="absolute inset-0">
+      <section className="relative min-h-[85vh] md:min-h-[70vh] flex items-end md:items-center pb-12 md:pb-0 overflow-hidden bg-navy-primary">
+
+        {/* === MOBILE: image fills full background === */}
+        <div className="absolute inset-0 md:hidden">
           <Image
             src="/images/hero-anunciar.png"
             alt="Proprietários Grupo Ouro"
@@ -17,11 +18,26 @@ export default function AnunciarPage() {
             className="object-cover object-top"
             priority
           />
-          {/* Mobile overlay: gradient from bottom to top so faces stay clear */}
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-primary via-navy-primary/60 to-transparent md:bg-transparent md:bg-none" />
-          {/* Desktop gradient: fades left side to navy, right side keeps image */}
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-primary via-navy-primary/80 to-transparent hidden md:block" />
+          {/* gradient from bottom so faces at top stay clear, text at bottom readable */}
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-primary via-navy-primary/60 to-transparent" />
         </div>
+
+        {/* === DESKTOP: image on the right half only === */}
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden md:block">
+          <Image
+            src="/images/hero-anunciar.png"
+            alt="Proprietários Grupo Ouro"
+            fill
+            className="object-cover object-[center_top]"
+            priority
+          />
+          {/* fade the left edge of the photo into the navy background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-primary via-navy-primary/30 to-transparent" />
+        </div>
+
+        {/* Solid navy for left half text area on desktop */}
+        <div className="absolute left-0 top-0 bottom-0 w-1/2 hidden md:block bg-navy-primary" />
+
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
           <div className="max-w-2xl">
