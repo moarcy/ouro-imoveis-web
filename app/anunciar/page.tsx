@@ -13,7 +13,7 @@ export default function AnunciarPage() {
             src="/images/hero-anunciar.png"
             alt="Proprietários Grupo Ouro"
             fill
-            className="object-cover object-center brightness-75"
+            className="object-cover object-top brightness-75"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-primary via-transparent to-transparent" />
         </div>
