@@ -70,13 +70,13 @@ export default function PropertyDetailsPage() {
         </div>
       </div>
 
-      <main className="flex-1 pt-32 pb-24 px-6">
+      <main className="flex-1 pt-24 lg:pt-32 pb-24 px-6 lg:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="flex flex-col lg:grid lg:grid-cols-12 gap-y-8 lg:gap-12">
             
             {/* Gallery Section */}
-            <div className="lg:col-span-8 flex flex-col gap-6">
-              <div className="relative aspect-[16/10] bg-gray-100 rounded-[40px] overflow-hidden group shadow-2xl">
+            <div className="lg:col-span-8 flex flex-col gap-4 lg:gap-6 order-1">
+              <div className="relative aspect-[4/3] lg:aspect-[16/10] bg-gray-100 rounded-[28px] lg:rounded-[40px] overflow-hidden group shadow-xl my-4 lg:my-0">
                 <Image 
                   src={property.images[activeImage] || property.image} 
                   alt={property.title}
@@ -120,35 +120,10 @@ export default function PropertyDetailsPage() {
                   ))}
                 </div>
               )}
-
-              {/* Description */}
-              <div className="mt-8 lg:mt-12">
-                <h2 className="text-xl lg:text-2xl font-serif font-bold text-navy-primary mb-3 lg:mb-6">Descrição do Imóvel</h2>
-                <div className="prose prose-navy max-w-none text-navy-light/80 leading-relaxed text-base lg:text-lg italic">
-                  "{property.description}"
-                </div>
-                
-                <div className="mt-8 lg:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                  <div className="bg-gray-50 p-6 lg:p-8 rounded-[32px] lg:rounded-[40px] border border-gray-100">
-                    <h3 className="font-bold text-navy-primary mb-4 lg:mb-6 flex items-center gap-2">
-                      <CheckCircle2 size={18} className="text-gold-dark" />
-                      Destaques do Imóvel
-                    </h3>
-                    <ul className="grid grid-cols-1 gap-4">
-                      {["Acabamento Premium", "Localização Privilegiada", "Documentação OK", "Pronto para morar"].map(item => (
-                        <li key={item} className="flex items-center gap-3 text-navy-light font-medium text-sm">
-                          <div className="w-1.5 h-1.5 bg-gold-primary rounded-full" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Sticky Sidebar Info */}
-            <div className="lg:col-span-4 lg:sticky lg:top-36 h-fit flex flex-col gap-6 lg:gap-8">
+            <div className="lg:col-span-4 lg:row-span-2 lg:sticky lg:top-36 h-fit flex flex-col gap-6 lg:gap-8 order-2 lg:order-2">
               <div className="bg-white p-6 lg:p-10 rounded-[32px] lg:rounded-[40px] shadow-2xl border border-gray-100 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                 
@@ -234,6 +209,34 @@ export default function PropertyDetailsPage() {
                 </div>
               </div>
             </div>
+
+            {/* Description */}
+            <div className="lg:col-span-8 order-3 lg:order-3 mt-4 lg:mt-0 flex flex-col gap-6 lg:gap-8">
+              <div>
+                <h2 className="text-2xl lg:text-3xl font-serif font-bold text-navy-primary mb-4 lg:mb-6">Descrição do Imóvel</h2>
+                <div className="prose prose-navy max-w-none text-navy-light/80 leading-relaxed text-base lg:text-lg italic">
+                  "{property.description}"
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <div className="bg-gray-50 p-6 lg:p-8 rounded-[32px] lg:rounded-[40px] border border-gray-100">
+                  <h3 className="font-bold text-navy-primary mb-4 lg:mb-6 flex items-center gap-2">
+                    <CheckCircle2 size={18} className="text-gold-dark" />
+                    Destaques do Imóvel
+                  </h3>
+                  <ul className="grid grid-cols-1 gap-4">
+                    {["Acabamento Premium", "Localização Privilegiada", "Documentação OK", "Pronto para morar"].map(item => (
+                      <li key={item} className="flex items-center gap-3 text-navy-light font-medium text-sm">
+                        <div className="w-2 h-2 bg-gold-primary rounded-full shadow-sm" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           {/* Related Properties */}
