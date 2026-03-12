@@ -7,8 +7,7 @@ import { CheckCircle2, MessageSquare, TrendingUp, ShieldCheck, Users } from "luc
 export default function AnunciarPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center overflow-hidden bg-navy-primary">
+      <section className="relative min-h-[80vh] lg:min-h-[70vh] flex items-center pt-32 pb-16 lg:py-0 overflow-hidden bg-navy-primary">
         <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden md:block">
           <Image
             src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" // Professional partner looking photo
