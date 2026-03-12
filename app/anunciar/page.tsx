@@ -10,10 +10,10 @@ export default function AnunciarPage() {
       <section className="relative min-h-[80vh] lg:min-h-[70vh] flex items-center pt-32 pb-16 lg:py-0 overflow-hidden bg-navy-primary">
         <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden md:block">
           <Image
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" // Professional partner looking photo
+            src="/images/hero-anunciar.png"
             alt="Proprietários Grupo Ouro"
             fill
-            className="object-cover object-top brightness-75 scale-x-[-1]"
+            className="object-cover object-center brightness-75"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-primary via-transparent to-transparent" />
         </div>
