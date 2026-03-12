@@ -122,15 +122,15 @@ export default function PropertyDetailsPage() {
               )}
 
               {/* Description */}
-              <div className="mt-12">
-                <h2 className="text-2xl font-serif font-bold text-navy-primary mb-6">Descrição do Imóvel</h2>
-                <div className="prose prose-navy max-w-none text-navy-light/80 leading-relaxed text-lg italic">
+              <div className="mt-8 lg:mt-12">
+                <h2 className="text-xl lg:text-2xl font-serif font-bold text-navy-primary mb-3 lg:mb-6">Descrição do Imóvel</h2>
+                <div className="prose prose-navy max-w-none text-navy-light/80 leading-relaxed text-base lg:text-lg italic">
                   "{property.description}"
                 </div>
                 
-                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="bg-gray-50 p-8 rounded-[40px] border border-gray-100">
-                    <h3 className="font-bold text-navy-primary mb-6 flex items-center gap-2">
+                <div className="mt-8 lg:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                  <div className="bg-gray-50 p-6 lg:p-8 rounded-[32px] lg:rounded-[40px] border border-gray-100">
+                    <h3 className="font-bold text-navy-primary mb-4 lg:mb-6 flex items-center gap-2">
                       <CheckCircle2 size={18} className="text-gold-dark" />
                       Destaques do Imóvel
                     </h3>
@@ -148,75 +148,75 @@ export default function PropertyDetailsPage() {
             </div>
 
             {/* Sticky Sidebar Info */}
-            <div className="lg:col-span-4 lg:sticky lg:top-36 h-fit flex flex-col gap-8">
-              <div className="bg-white p-8 md:p-10 rounded-[40px] shadow-2xl border border-gray-100 relative overflow-hidden">
+            <div className="lg:col-span-4 lg:sticky lg:top-36 h-fit flex flex-col gap-6 lg:gap-8">
+              <div className="bg-white p-6 lg:p-10 rounded-[32px] lg:rounded-[40px] shadow-2xl border border-gray-100 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                 
                 <div className="relative">
-                  <span className="inline-block bg-gold-primary/10 text-gold-dark px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">
+                  <span className="inline-block bg-gold-primary/10 text-gold-dark px-3 py-1 lg:px-4 lg:py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 lg:mb-6">
                     {property.type} • {property.propertyType}
                   </span>
                   
-                  <h1 className="text-3xl md:text-4xl font-serif font-bold text-navy-primary mb-4 leading-tight">
+                  <h1 className="text-2xl lg:text-4xl font-serif font-bold text-navy-primary mb-2 lg:mb-4 leading-tight">
                     {property.title}
                   </h1>
                   
-                  <div className="flex items-center gap-2 text-navy-light/60 mb-8 border-b border-gray-100 pb-8">
+                  <div className="flex items-center gap-2 text-sm lg:text-base text-navy-light/60 mb-6 lg:mb-8 border-b border-gray-100 pb-6 lg:pb-8">
                     <MapPin size={18} className="text-gold-dark" />
                     <span className="font-medium">{property.location}</span>
                   </div>
 
-                  <div className="flex flex-col gap-1 mb-10">
-                    <span className="text-xs text-gray-400 uppercase font-black tracking-widest">Valor do Investimento</span>
-                    <span className="text-4xl font-serif font-black text-navy-primary tracking-tighter">
+                  <div className="flex flex-col gap-0.5 lg:gap-1 mb-6 lg:mb-10">
+                    <span className="text-[10px] lg:text-xs text-gray-400 uppercase font-black tracking-widest">Valor do Investimento</span>
+                    <span className="text-3xl lg:text-4xl font-serif font-black text-navy-primary tracking-tighter">
                       {property.price}
                     </span>
                   </div>
 
                   {/* Core Specs Grid */}
-                  <div className="grid grid-cols-2 gap-4 mb-10">
-                    <div className="bg-gray-50 p-5 rounded-3xl flex flex-col gap-2 items-center text-center">
-                      <Bed size={22} className="text-gold-dark" />
+                  <div className="grid grid-cols-2 gap-2 lg:gap-4 mb-8 lg:mb-10">
+                    <div className="bg-gray-50 p-3 lg:p-5 rounded-2xl lg:rounded-3xl flex flex-col gap-1 lg:gap-2 items-center text-center">
+                      <Bed className="text-gold-dark size-5 lg:size-6" />
                       <div>
-                        <div className="text-[10px] text-gray-400 font-bold uppercase">Quartos</div>
-                        <div className="text-navy-primary font-black">{property.beds}</div>
+                        <div className="text-[9px] lg:text-[10px] text-gray-400 font-bold uppercase">Quartos</div>
+                        <div className="text-navy-primary font-black text-sm lg:text-base">{property.beds}</div>
                       </div>
                     </div>
-                    <div className="bg-gray-50 p-5 rounded-3xl flex flex-col gap-2 items-center text-center">
-                      <Bath size={22} className="text-gold-dark" />
+                    <div className="bg-gray-50 p-3 lg:p-5 rounded-2xl lg:rounded-3xl flex flex-col gap-1 lg:gap-2 items-center text-center">
+                      <Bath className="text-gold-dark size-5 lg:size-6" />
                       <div>
-                        <div className="text-[10px] text-gray-400 font-bold uppercase">Banheiros</div>
-                        <div className="text-navy-primary font-black">{property.baths}</div>
+                        <div className="text-[9px] lg:text-[10px] text-gray-400 font-bold uppercase">Banheiros</div>
+                        <div className="text-navy-primary font-black text-sm lg:text-base">{property.baths}</div>
                       </div>
                     </div>
-                    <div className="bg-gray-50 p-5 rounded-3xl flex flex-col gap-2 items-center text-center">
-                      <Car size={22} className="text-gold-dark" />
+                    <div className="bg-gray-50 p-3 lg:p-5 rounded-2xl lg:rounded-3xl flex flex-col gap-1 lg:gap-2 items-center text-center">
+                      <Car className="text-gold-dark size-5 lg:size-6" />
                       <div>
-                        <div className="text-[10px] text-gray-400 font-bold uppercase">Garagem</div>
-                        <div className="text-navy-primary font-black">{property.cars}</div>
+                        <div className="text-[9px] lg:text-[10px] text-gray-400 font-bold uppercase">Garagem</div>
+                        <div className="text-navy-primary font-black text-sm lg:text-base">{property.cars}</div>
                       </div>
                     </div>
-                    <div className="bg-gray-50 p-5 rounded-3xl flex flex-col gap-2 items-center text-center">
-                      <Square size={22} className="text-gold-dark" />
+                    <div className="bg-gray-50 p-3 lg:p-5 rounded-2xl lg:rounded-3xl flex flex-col gap-1 lg:gap-2 items-center text-center">
+                      <Square className="text-gold-dark size-5 lg:size-6" />
                       <div>
-                        <div className="text-[10px] text-gray-400 font-bold uppercase">Área Total</div>
-                        <div className="text-navy-primary font-black">{property.area}</div>
+                        <div className="text-[9px] lg:text-[10px] text-gray-400 font-bold uppercase">Área. T.</div>
+                        <div className="text-navy-primary font-black text-sm lg:text-base">{property.area}</div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-3 lg:gap-4">
                     <a 
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full bg-navy-primary hover:bg-navy-light text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-xl hover:-translate-y-1"
+                      className="w-full bg-navy-primary hover:bg-navy-light text-white py-4 lg:py-5 rounded-xl lg:rounded-2xl font-bold flex items-center justify-center gap-2 lg:gap-3 transition-all shadow-xl hover:-translate-y-1 text-sm lg:text-base"
                     >
-                      <MessageCircle size={24} />
+                      <MessageCircle size={20} className="lg:size-6" />
                       Agendar Visita via WhatsApp
                     </a>
-                    <button className="w-full border-2 border-navy-primary/10 text-navy-primary py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-gray-50 transition-all">
-                      <Phone size={20} />
+                    <button className="w-full border-2 border-navy-primary/10 text-navy-primary py-4 lg:py-5 rounded-xl lg:rounded-2xl font-bold flex items-center justify-center gap-2 lg:gap-3 hover:bg-gray-50 transition-all text-sm lg:text-base">
+                      <Phone size={18} className="lg:size-5" />
                       Ligar para Corretor
                     </button>
                   </div>
@@ -224,7 +224,7 @@ export default function PropertyDetailsPage() {
               </div>
 
               {/* Document Banner */}
-              <div className="bg-navy-primary p-8 rounded-[40px] text-white flex items-center justify-between">
+              <div className="bg-navy-primary p-6 lg:p-8 rounded-[32px] lg:rounded-[40px] text-white flex items-center justify-between">
                 <div>
                   <div className="text-[10px] text-white/50 font-bold uppercase mb-1">Status Documental</div>
                   <div className="text-lg font-bold text-gold-primary tracking-tight">{property.document}</div>
