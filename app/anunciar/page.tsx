@@ -7,7 +7,7 @@ import { CheckCircle2, MessageSquare, TrendingUp, ShieldCheck, Users } from "luc
 export default function AnunciarPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <section className="relative min-h-[80vh] lg:min-h-[70vh] flex items-center pt-32 pb-16 lg:py-0 overflow-hidden bg-navy-primary">
+      <section className="relative min-h-[85vh] lg:min-h-[70vh] flex items-end md:items-center pb-12 md:pt-0 md:pb-0 pt-24 overflow-hidden bg-navy-primary">
         {/* Background image – visible on all screens */}
         <div className="absolute inset-0">
           <Image
@@ -17,8 +17,8 @@ export default function AnunciarPage() {
             className="object-cover object-top"
             priority
           />
-          {/* Mobile overlay: heavy dark so text is readable */}
-          <div className="absolute inset-0 bg-navy-primary/70 md:bg-transparent" />
+          {/* Mobile overlay: gradient from bottom to top so faces stay clear */}
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-primary via-navy-primary/60 to-transparent md:bg-transparent md:bg-none" />
           {/* Desktop gradient: fades left side to navy, right side keeps image */}
           <div className="absolute inset-0 bg-gradient-to-r from-navy-primary via-navy-primary/80 to-transparent hidden md:block" />
         </div>
@@ -28,11 +28,12 @@ export default function AnunciarPage() {
             <span className="text-gold-primary font-bold uppercase tracking-[0.3em] text-sm mb-4 block animate-slide-up">
               Seu Imóvel em Boas Mãos
             </span>
-            <h1 className="text-4xl md:text-6xl font-montserrat font-bold text-white mb-8 tracking-tight animate-slide-up">
-              Anuncie com Quem <br />
-              <span className="text-gradient-gold">Valoriza</span> Seu Patrimônio
+            <h1 className="text-3xl md:text-6xl font-montserrat font-bold text-white mb-6 md:mb-8 tracking-tight animate-slide-up">
+              Anuncie com Quem
+              <span className="text-gradient-gold"> Valoriza</span> Seu Patrimônio
             </h1>
-            <p className="text-lg text-white/80 mb-10 font-light leading-relaxed animate-slide-up">
+            {/* Hide long paragraph on mobile to avoid cluttering the photo */}
+            <p className="hidden md:block text-lg text-white/80 mb-10 font-light leading-relaxed animate-slide-up">
               Na Ouro Imóveis, não apenas listamos propriedades; nós contamos histórias de sucesso. Unimos tecnologia de ponta, marketing de alto impacto e atendimento personalizado para garantir que seu imóvel seja vendido pelo valor que ele realmente merece.
             </p>
             <button className="bg-gold-primary hover:bg-gold-dark text-navy-primary px-10 py-5 rounded-full text-lg font-bold transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center gap-3">
