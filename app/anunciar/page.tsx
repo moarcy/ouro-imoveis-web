@@ -8,14 +8,19 @@ export default function AnunciarPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <section className="relative min-h-[80vh] lg:min-h-[70vh] flex items-center pt-32 pb-16 lg:py-0 overflow-hidden bg-navy-primary">
-        <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden md:block">
+        {/* Background image – visible on all screens */}
+        <div className="absolute inset-0">
           <Image
             src="/images/hero-anunciar.png"
             alt="Proprietários Grupo Ouro"
             fill
-            className="object-cover object-top brightness-75"
+            className="object-cover object-top"
+            priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-primary via-transparent to-transparent" />
+          {/* Mobile overlay: heavy dark so text is readable */}
+          <div className="absolute inset-0 bg-navy-primary/70 md:bg-transparent" />
+          {/* Desktop gradient: fades left side to navy, right side keeps image */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-primary via-navy-primary/80 to-transparent hidden md:block" />
         </div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
