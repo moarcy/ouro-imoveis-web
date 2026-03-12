@@ -130,7 +130,7 @@ export default function HomePage() {
             transition={{ duration: 1, delay: 0.2 }}
             className="w-full h-[180px] md:h-[220px] flex flex-col items-center justify-center text-center mb-8"
           >
-            <h1 className="text-2xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 tracking-tight flex items-center justify-center gap-x-2 md:gap-x-4 whitespace-nowrap">
+            <h1 className="text-2xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 tracking-tight flex flex-wrap items-center justify-center gap-x-2 md:gap-x-4 gap-y-2">
               <span>Encontre</span>
               <TypingEffect phrases={["a oportunidade", "a casa", "o apartamento"]} />
               <span>dos seus sonhos</span>
