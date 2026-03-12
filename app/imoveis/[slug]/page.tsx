@@ -85,6 +85,11 @@ export default function PropertyDetailsPage() {
                   priority
                 />
                 
+                {/* Badge superimposed on image */}
+                <div className="absolute top-4 left-4 lg:top-6 lg:left-6 bg-navy-primary/80 backdrop-blur-md text-gold-primary px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-[10px] lg:text-xs font-bold uppercase tracking-widest z-10 shadow-lg">
+                  {property.type} • {property.propertyType}
+                </div>
+                
                 {property.images.length > 1 && (
                   <div className="absolute inset-0 flex items-center justify-between px-6 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button 
@@ -128,10 +133,6 @@ export default function PropertyDetailsPage() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                 
                 <div className="relative">
-                  <span className="inline-block bg-gold-primary/10 text-gold-dark px-3 py-1 lg:px-4 lg:py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 lg:mb-6">
-                    {property.type} • {property.propertyType}
-                  </span>
-                  
                   <h1 className="text-2xl lg:text-4xl font-serif font-bold text-navy-primary mb-2 lg:mb-4 leading-tight">
                     {property.title}
                   </h1>
@@ -141,9 +142,9 @@ export default function PropertyDetailsPage() {
                     <span className="font-medium">{property.location}</span>
                   </div>
 
-                  <div className="flex flex-col gap-0.5 lg:gap-1 mb-6 lg:mb-10">
-                    <span className="text-[10px] lg:text-xs text-gray-400 uppercase font-black tracking-widest">Valor do Investimento</span>
-                    <span className="text-3xl lg:text-4xl font-serif font-black text-navy-primary tracking-tighter">
+                  <div className="flex flex-col gap-1 lg:gap-2 mb-6 lg:mb-10">
+                    <span className="text-[10px] lg:text-xs text-gray-400 uppercase font-bold tracking-widest">Valor do Investimento</span>
+                    <span className="text-2xl lg:text-4xl font-serif font-bold text-navy-primary tracking-tight">
                       {property.price}
                     </span>
                   </div>
