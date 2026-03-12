@@ -31,8 +31,8 @@ export default function AnunciarPage() {
             className="object-cover object-[center_top]"
             priority
           />
-          {/* fade the left edge of the photo into the navy background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-primary via-navy-primary/30 to-transparent" />
+          {/* fade only the very left edge of the photo into navy */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-primary/90 via-[10%] via-transparent to-transparent" />
         </div>
 
         {/* Solid navy for left half text area on desktop */}
